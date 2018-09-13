@@ -1,0 +1,5 @@
+# Test Files
+.test/*
+
+# .vscode Files
+.vscode/*

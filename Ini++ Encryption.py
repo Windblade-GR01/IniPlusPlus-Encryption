@@ -1,15 +1,19 @@
-import os,sys,struct
+import os
+import sys
+import struct
+
 
 def main():
-	key = sys.argv[3]
-	f = open(sys.argv[1],"rb")
-	data = ""
-	data = f.read()
-	f.close()
-	out = convert(data,key)
-	f2 = open(sys.argv[2],"wb")
-	f2.write(out)
-	f2.close()
+    key = sys.argv[3]
+    f = open(sys.argv[1], "rb")
+    data = ""
+    data = f.read()
+    f.close()
+    out = convert(data, key)
+    f2 = open(sys.argv[2], "wb")
+    f2.write(out)
+    f2.close()
+
 
 def convert(data, key):
     v11 = range(256)
@@ -41,4 +45,6 @@ def convert(data, key):
         out += chr(ord(data[j]) ^ v5)
     return out
 
-main()
+
+if __name__ == "__main__":
+    main()
